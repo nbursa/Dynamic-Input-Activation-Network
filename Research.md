@@ -108,8 +108,6 @@ We presented a novel neural network architecture that dynamically activates addi
 #### Contact Information:
 
 Nenad Bursać  
-Independent Researcher  
-nbursa@gmail.com  
-+381604874000
+Independent Researcher
 
 ---
