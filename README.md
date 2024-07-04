@@ -47,7 +47,7 @@ This repository contains the code and research paper for the project "Dynamic In
 
 ## Paper
 
-The detailed research paper can be found in `paper.md`.
+The detailed research paper can be found in `Research.md`.
 
 ## License
 
