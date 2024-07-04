@@ -12,7 +12,7 @@ This repository contains the code and research paper for the project "Dynamic In
 - `notebooks/`: Jupyter notebooks for experiments.
 - `figures/`: Directory for storing figures and plots.
 - `README.md`: Project description and instructions.
-- `paper.md`: The research paper.
+- `Research.md`: The research paper.
 - `requirements.txt`: List of dependencies.
 - `LICENSE`: License file.
 
