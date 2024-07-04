@@ -52,8 +52,3 @@ The detailed research paper can be found in `paper.md`.
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-## Contact
-
-Nenad Bursać  
-Independent Researcher
