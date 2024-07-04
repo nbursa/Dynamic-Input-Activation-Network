@@ -109,5 +109,6 @@ We presented a novel neural network architecture that dynamically activates addi
 
 Nenad Bursać  
 Independent Researcher
+[https://nenadbursac.com](https://nenadbursac.com)
 
 ---
