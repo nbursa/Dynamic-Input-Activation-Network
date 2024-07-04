@@ -56,6 +56,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 ## Contact
 
 Nenad Bursać  
-Independent Researcher  
-nbursa@gmail.com  
-+381604874000
+Independent Researcher
