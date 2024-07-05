@@ -1,5 +1,3 @@
-### Research Paper Submission: Dynamic Input Activation in Neural Networks
-
 #### Title:
 
 Dynamic Input Activation in Neural Networks for Enhanced Learning and Adaptability
@@ -85,15 +83,15 @@ for i in range(100):
 
 #### Experiments:
 
-We conducted preliminary experiments using benchmark datasets to compare the performance of the proposed architecture against standard feedforward networks. Metrics such as accuracy, loss, and convergence speed were analyzed to evaluate the effectiveness of the dynamic input activation mechanism and the intuition module.
+We conducted preliminary experiments using the MNIST dataset to compare the performance of the proposed architecture against a standard feedforward neural network. Metrics such as training and validation accuracy, loss, learning rate, and gradient norms were analyzed to evaluate the effectiveness of the dynamic input activation mechanism and the intuition module. The models were trained for 10 epochs with a batch size of 64 and an initial learning rate of 0.00001.
 
 #### Results:
 
-The results indicate that the dynamic input activation mechanism, combined with the intuition module, can improve the network's ability to learn complex patterns and adapt to different data distributions. The network showed improved performance in terms of accuracy and faster convergence in tasks with temporal dependencies.
+The results indicate that the dynamic input activation mechanism, combined with the intuition module, can improve the network's ability to learn complex patterns and adapt to different data distributions. The IntuitionNN model showed improved performance in terms of accuracy, loss, and faster convergence compared to the RegularNN model. Specifically, the IntuitionNN model achieved a validation accuracy of 87.34%, whereas the RegularNN model reached 56.74%. Additionally, the IntuitionNN model demonstrated more stable gradient norms, indicating a well-behaved training process.
 
 #### Discussion:
 
-The dynamic input activation mechanism and intuition module introduce a new dimension of adaptability in neural networks. By leveraging inputs from earlier layers selectively and precomputing outputs based on initial inputs, the network can enhance its learning capabilities and better handle complex tasks. However, further research is needed to optimize the gating mechanism and intuition module, and explore their potential in various applications.
+The dynamic input activation mechanism and intuition module introduce a new dimension of adaptability in neural networks. By leveraging inputs from earlier layers selectively and precomputing outputs based on initial inputs, the network can enhance its learning capabilities and better handle complex tasks. However, further research is needed to optimize the gating mechanism and intuition module and explore their potential in various applications. The current experiments validate the concept and show promising results, but additional experiments on diverse datasets and more complex tasks are necessary to fully understand the benefits and limitations of this approach.
 
 #### Conclusion:
 
@@ -108,7 +106,7 @@ We presented a novel neural network architecture that dynamically activates addi
 #### Contact Information:
 
 Nenad Bursać  
-Independent Researcher
+Independent Researcher  
 [https://nenadbursac.com](https://nenadbursac.com)
 
 ---
