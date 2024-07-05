@@ -39,7 +39,7 @@ class IntuitionNN(nn.Module):
             difference = current_weight - initial_weight
             adjustment = self.learn_from_difference(difference)
             layer.weight.data += adjustment
-        
+
         # Update intuition coefficients based on outputs and intuition output
         intuition_adjustment = self.learn_from_intuition(outputs, intuition_output)
         self.intuition_coefficients += intuition_adjustment
@@ -47,8 +47,22 @@ class IntuitionNN(nn.Module):
     def learn_from_difference(self, difference):
         adjustment = difference * 0.0001  # Adjustment factor
         return adjustment
-    
+
     def learn_from_intuition(self, outputs, intuition_output):
         intuition_difference = (outputs - intuition_output).pow(2).mean()
         intuition_adjustment = intuition_difference * 0.0001  # Adjustment factor for intuition
         return intuition_adjustment
+
+
+class RegularNN(nn.Module):
+    def __init__(self, input_size, layer_sizes):
+        super(RegularNN, self).__init__()
+        self.layers = nn.ModuleList()
+        for i in range(len(layer_sizes)):
+            layer = nn.Linear(layer_sizes[i-1] if i > 0 else input_size, layer_sizes[i])
+            self.layers.append(layer)
+    
+    def forward(self, x):
+        for layer in self.layers:
+            x = torch.relu(layer(x))
+        return x
