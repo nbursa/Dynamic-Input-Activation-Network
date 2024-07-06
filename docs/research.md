@@ -4,7 +4,7 @@ Dynamic Input Activation in Neural Networks for Enhanced Learning and Adaptabili
 
 #### Abstract:
 
-We propose a novel neural network architecture that adaptively activates additional inputs from earlier layers on every second iteration. This dynamic input mechanism aims to enhance learning by providing richer and more varied information to the neurons, potentially improving pattern recognition and decision-making processes. Preliminary experiments suggest that this approach could lead to better performance in tasks with complex dependencies and temporal contexts. Additionally, we introduce an intuition module that helps the network develop a preliminary understanding of inputs, enhancing its learning efficiency and adaptability. We discuss the theoretical foundations, implementation details, and potential benefits of this architecture.
+We propose a neural network architecture that adaptively activates additional inputs from earlier layers on every n iteration. This dynamic input mechanism aims to enhance learning by providing richer and more varied information to the neurons, potentially improving pattern recognition and decision-making processes. Preliminary experiments suggest that this approach could lead to better performance in tasks with complex dependencies and temporal contexts. Additionally, we introduce an intuition module that helps the network develop a preliminary understanding of inputs, enhancing its learning efficiency and adaptability. We discuss the theoretical foundations, implementation details, and potential benefits of this architecture.
 
 #### Introduction:
 

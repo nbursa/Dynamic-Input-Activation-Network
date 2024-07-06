@@ -1,6 +1,4 @@
-# Dynamic-Input-Activation-Network: Results Summary
-
-## Results
+# Results
 
 This document summarizes the results of training the IntuitionNN and RegularNN models over 10 epochs. The metrics recorded include average loss, accuracy, duration, validation loss, and validation accuracy.
 

@@ -1,4 +1,4 @@
-# Dynamic-Input-Activation-Network
+# Dynamic Input Activation in Neural Networks for Enhanced Learning and Adaptability
 
 ## Overview
 
