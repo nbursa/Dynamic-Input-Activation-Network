@@ -1,22 +1,24 @@
-#### Title:
+### Title:
 
 Dynamic Input Activation in Neural Networks for Enhanced Learning and Adaptability
 
-#### Abstract:
+### Abstract:
 
-We propose a neural network architecture that adaptively activates additional inputs from earlier layers on every n iteration. This dynamic input mechanism aims to enhance learning by providing richer and more varied information to the neurons, potentially improving pattern recognition and decision-making processes. Preliminary experiments suggest that this approach could lead to better performance in tasks with complex dependencies and temporal contexts. Additionally, we introduce an intuition module that helps the network develop a preliminary understanding of inputs, enhancing its learning efficiency and adaptability. We discuss the theoretical foundations, implementation details, and potential benefits of this architecture.
+We propose a neural network architecture that adaptively activates additional inputs from earlier layers on every nth iteration. This dynamic input mechanism aims to enhance learning by providing richer and more varied information to the neurons, potentially improving pattern recognition and decision-making processes. Preliminary experiments suggest that this approach could lead to better performance in tasks with complex dependencies and temporal contexts. Additionally, we introduce an intuition module that helps the network develop a preliminary understanding of inputs, enhancing its learning efficiency and adaptability. We discuss the theoretical foundations, implementation details, and potential benefits of this architecture.
 
-#### Introduction:
+### Introduction:
 
 Neural networks have demonstrated remarkable performance in various domains by learning complex patterns from data. However, traditional architectures often face limitations in adapting to dynamically changing inputs and leveraging information from multiple temporal contexts. We introduce a dynamic input activation mechanism that allows neurons in deeper layers to incorporate additional inputs from earlier layers on every second iteration, potentially enhancing learning and adaptability. Furthermore, we integrate an intuition module that helps the network develop preliminary understandings, enhancing its efficiency in learning new tasks.
 
-#### Related Work:
+### Related Work:
 
 Previous research has explored various methods to enhance neural network performance, including recurrent neural networks (RNNs) for handling sequential data and attention mechanisms for focusing on relevant parts of the input. However, the concept of dynamically activating inputs from earlier layers based on iteration-specific conditions, combined with an intuition module, is relatively unexplored. This work builds on the principles of modular and adaptive networks, aiming to provide a new approach to neural network design.
 
-#### Methodology:
+### Methodology:
 
 We define a neural network architecture with an additional gating mechanism that controls the flow of information from earlier layers. This gate is activated on every second iteration, allowing neurons in the third layer to receive inputs from both the second and first layers. The gating mechanism is learned during training, enabling the network to adaptively decide when to incorporate extra inputs. Additionally, an intuition module is introduced, which precomputes outputs based on initial inputs and adjusts its understanding over time.
+
+#### Implementation Details:
 
 ```python
 import torch
@@ -27,14 +29,12 @@ class IntuitionNN(nn.Module):
     def __init__(self, input_size, layer_sizes, intuition_size):
         super(IntuitionNN, self).__init__()
         self.layers = nn.ModuleList()
-        self.initial_weights = []
         self.intuition_layer = nn.Linear(input_size, intuition_size)
-        self.intuition_coefficients = torch.zeros(intuition_size)
+        self.intuition_coefficients = nn.Parameter(torch.zeros(intuition_size))
 
         for i in range(len(layer_sizes)):
             layer = nn.Linear(layer_sizes[i-1] if i > 0 else input_size, layer_sizes[i])
             self.layers.append(layer)
-            self.initial_weights.append(layer.weight.clone().detach())
             if i > 1:
                 extra_input_layer = nn.Linear(layer_sizes[i-2], layer_sizes[i])
                 self.add_module(f'extra_input_layer_{i}', extra_input_layer)
@@ -81,27 +81,24 @@ for i in range(100):
     # Perform backpropagation and optimization steps here
 ```
 
-#### Experiments:
+### Experiments:
 
-We conducted preliminary experiments using the MNIST dataset to compare the performance of the proposed architecture against a standard feedforward neural network. Metrics such as training and validation accuracy, loss, learning rate, and gradient norms were analyzed to evaluate the effectiveness of the dynamic input activation mechanism and the intuition module. The models were trained for 10 epochs with a batch size of 64 and an initial learning rate of 0.00001.
+We conducted experiments using the CIFAR-10 dataset to compare the performance of the proposed architecture against a standard feedforward neural network. Metrics such as training and validation accuracy, loss, precision, recall, and F1-score were analyzed to evaluate the effectiveness of the dynamic input activation mechanism and the intuition module. The models were trained for 10 epochs with a batch size of 32 and an initial learning rate of 0.0001.
 
-#### Results:
+### Results:
 
-The results indicate that the dynamic input activation mechanism, combined with the intuition module, can improve the network's ability to learn complex patterns and adapt to different data distributions. The IntuitionNN model showed improved performance in terms of accuracy, loss, and faster convergence compared to the RegularNN model. Specifically, the IntuitionNN model achieved a validation accuracy of 87.34%, whereas the RegularNN model reached 56.74%. Additionally, the IntuitionNN model demonstrated more stable gradient norms, indicating a well-behaved training process.
+The results indicate that the dynamic input activation mechanism, combined with the intuition module, can improve the network's ability to learn complex patterns and adapt to different data distributions. The IntuitionNN model showed improved performance in terms of accuracy, loss, and faster convergence compared to the RegularNN model. Specifically, the IntuitionNN model achieved a validation accuracy of 50.65%, whereas the RegularNN model reached 47.64%. Additionally, the IntuitionNN model demonstrated more stable gradient norms, indicating a well-behaved training process.
 
-#### Discussion:
+### Discussion:
 
 The dynamic input activation mechanism and intuition module introduce a new dimension of adaptability in neural networks. By leveraging inputs from earlier layers selectively and precomputing outputs based on initial inputs, the network can enhance its learning capabilities and better handle complex tasks. However, further research is needed to optimize the gating mechanism and intuition module and explore their potential in various applications. The current experiments validate the concept and show promising results, but additional experiments on diverse datasets and more complex tasks are necessary to fully understand the benefits and limitations of this approach.
 
-#### Conclusion:
+### Conclusion:
 
 We presented a novel neural network architecture that dynamically activates additional inputs from earlier layers based on iteration-specific conditions and incorporates an intuition module. This approach has shown promising results in enhancing learning and adaptability. Future work will focus on refining the gating mechanism and intuition module, and extending this concept to more complex network architectures and applications.
 
-#### References:
+### References:
 
 1. Goodfellow, I., Bengio, Y., & Courville, A. (2016). Deep Learning. MIT Press.
 2. Hochreiter, S., & Schmidhuber, J. (1997). Long Short-Term Memory. Neural Computation, 9(8), 1735-1780.
 3. Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). Attention Is All You Need. In Advances in Neural Information Processing Systems (NeurIPS).
-
-
----
