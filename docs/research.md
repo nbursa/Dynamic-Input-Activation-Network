@@ -103,10 +103,5 @@ We presented a novel neural network architecture that dynamically activates addi
 2. Hochreiter, S., & Schmidhuber, J. (1997). Long Short-Term Memory. Neural Computation, 9(8), 1735-1780.
 3. Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). Attention Is All You Need. In Advances in Neural Information Processing Systems (NeurIPS).
 
-#### Contact Information:
-
-Nenad Bursać  
-Independent Researcher  
-[https://nenadbursac.com](https://nenadbursac.com)
 
 ---
