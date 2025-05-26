@@ -45,3 +45,8 @@ This repository contains the code and documentation for the project "Dynamic Inp
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=nbursa/dynamic-input-activation-network@github)](https://gitads.dev/v1/ad-track?source=nbursa/dynamic-input-activation-network@github)
+
+
