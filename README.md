@@ -1,4 +1,4 @@
-
+<!-- GitAds-Verify: 3FHJ5PF56R1GWDSUUGVH7SLMCEFYMCKE -->
 # Dynamic Input Activation in Neural Networks for Enhanced Learning and Adaptability
 
 ## Overview
